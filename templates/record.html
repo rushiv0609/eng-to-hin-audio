@@ -1,0 +1,36 @@
+<!doctype html>
+<head>
+  <title>Record live audio</title>
+  <meta charset="utf-8">
+  <script src="{{ url_for('static', filename='rec1.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
+
+<style>
+.error {color:red; font-size:16pt}
+</style>
+
+</head>
+<body>
+<center>
+  <header align="center">
+    <h1>Press & hold the button to record</h1>
+  </header>
+  <main>
+    
+    <p>
+        <input id="record" type="image" src="{{ url_for('static', filename='rec-btn-normal.png') }}" onmousedown="mousedown()" onmouseup="resetImage();" onmouseleave="resetImage();" height=128 width=128 /> 
+        <br>
+        <div class="error"> <p> {{ error }} </p></div>
+        
+        <button id="submit" class="button" disabled>Submit</button>
+        <form id="myForm" method="post" action="./save" enctype="multipart/form-data">
+            <input type="file" id="upload" style="display:none">
+            
+        </form>
+    </p>
+    <p><audio id="audio" controls></audio></p>
+    </center>
+
+  </main>
+</body>
+

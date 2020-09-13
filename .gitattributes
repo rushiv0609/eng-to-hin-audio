@@ -1,0 +1,7 @@
+deepspeech_model/output_graph.rounded.pb filter=lfs diff=lfs merge=lfs -text
+deepspeech_model/output_graph.rounded.pbmm filter=lfs diff=lfs merge=lfs -text
+deepspeech_model/trie filter=lfs diff=lfs merge=lfs -text
+deepspeech_model/alphabet.txt filter=lfs diff=lfs merge=lfs -text
+deepspeech_model/lm.binary filter=lfs diff=lfs merge=lfs -text
+deepspeech_model/output_graph.pb filter=lfs diff=lfs merge=lfs -text
+deepspeech_model/output_graph.pbmm filter=lfs diff=lfs merge=lfs -text

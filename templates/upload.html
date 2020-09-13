@@ -1,0 +1,32 @@
+<doctype html>
+
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<title>File Upload </title>
+</head>
+<body>
+<h2>Select wav file to upload</h2>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+<form method="post" action="/upload" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="file" multiple="false" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+		<input type="submit" value="Submit" onclick="$('#loading').show();">
+    <div id="loading" style="display:none;"><img src="{{ url_for('static', filename='loading1.gif') }}" alt="" /></div>
+	</p>
+</form>
+
+</body>

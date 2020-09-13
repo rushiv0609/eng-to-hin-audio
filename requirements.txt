@@ -1,0 +1,35 @@
+pandas
+numpy==1.15.4
+tensorflow==1.12.0
+Keras==2.2.4
+Keras-Applications==1.0.6
+Keras-Preprocessing==1.0.5
+librosa==0.6.2
+progressbar2
+python-utils
+tensorflow == 1.13.1
+numpy == 1.15.4
+matplotlib
+scipy
+sox
+paramiko >= 2.1
+python_speech_features
+pyxdg
+bs4
+six
+requests
+tables
+attrdict
+setuptools
+librosa
+soundfile
+deepspeech==0.4.1
+Flask==1.0.2
+six
+tqdm==4.30.*
+torch>=1.0
+future
+configargparse
+git+https://github.com/pytorch/text.git@master#wheel=torchtext
+git+https://github.com/tensorflow/nmt.git
+

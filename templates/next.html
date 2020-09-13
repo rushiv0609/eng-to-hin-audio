@@ -1,0 +1,68 @@
+<html>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+p {font-size:18pt}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 10px;
+}
+</style>
+<script src="{{ url_for('static', filename='rec1.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
+
+<script>
+
+var filename,p,xhr,audio,spkBtn;
+
+window.onload = function () {
+
+    p=document.getElementById("filename");
+    spkBtn=document.getElementById("speaker");
+    $.get("http://127.0.0.1:5000/get/hindi/audio", function(data, status){
+        filename=data["file"];
+        audio = new Audio(filename);
+        spkBtn.style.visibility = "visible";
+      });
+
+}
+
+function speak(){
+    audio.play();
+}
+
+</script>
+
+<body>
+<h2> Language detected : </h2>
+<p> {{ lang  }}</p> 
+
+<br><br>
+
+<div class="row">
+    <div class="column" style="background-color:#aaa;">
+        <h2> You Said : </h2> 
+        <p>{{ text  }} </p>
+    </div>
+    <div class="column" style="background-color:#bbb;">
+        <h2> Tranlation : </h2> 
+        <p>{{ trans  }} </p>
+        <p><input id="speaker" type="image" src="{{ url_for('static', filename='speaker.png') }}"  height=100 width=100 onclick="speak();" style="visibility:hidden;"/> </p>
+    </div>
+
+</div>
+
+<p id="filename"> </p>
+
+</body>
+
+</html>
